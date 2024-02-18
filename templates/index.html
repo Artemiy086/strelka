@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block main %}
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Филтры
+</button>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Фильтры</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>`
+      <div class="modal-body">
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ms-3 mb-1"
+                    data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+              Формат
+            </button>
+            <div class="collapse" id="home-collapse" style="">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ">
+                {% for l in [[".jpeg", "jpeg_format"], [".jpg", "jpg_format"], [".png", "png_format"], [".svg", "svg_format"]] %}
+                  <li>
+                    <div>
+                      <div class="col d-flex justify-content-start">
+                        <input class="form-check-input mx-5" type="checkbox" value="" id="{{ l[1] }}" checked>
+                        <label class="form-check-label" for="{{ l[1] }}">
+                          {{ l[0] }}
+                        </label>
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          <li class="border-top my-3"></li>
+          <li class="mb-3">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ms-3 mb-1"
+                    data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+              Дополнительно
+            </button>
+            <div class="collapse" id="dashboard-collapse" style="">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                {% for l in [["Прозрачный фон", "transparent_background"], ["Черно-белая картинка", "black_and_white"], ["Разноцветная картинка", "Multicolored"], ["Растровая графика", "Raster_graphics"], ["Векторная графика", "Vector_graphics"]] %}
+                  <li>
+                    <div class="form-check form-switch d-flex justify-content-start ms-4">
+                      <input class="form-check-input me-4" type="checkbox" id="{{ l[1] }}">
+                      <label class="form-check-label" for="{{ l[1] }}">{{ l[0] }}</label>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </li>
+          <li class="border-top my-3"></li>
+          <li class="mb-3">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed ms-3 mb-1"
+                    data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              Размер
+            </button>
+            <div class="collapse" id="orders-collapse" style="">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ">
+                <li>
+                    <div class="row justify-content-start">
+                      <div class="col ">
+                        <input type="text" class="form-control" placeholder="Мин. высота">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Макс. высота">
+                      </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Мин. ширина">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Макс. ширина">
+                      </div>
+                    </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="border-top my-3"></li>
+          <li class="mb-3">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+              Account
+            </button>
+            <div class="collapse" id="account-collapse" style="">
+              <ul class="btn-toggle-nav list-dark fw-normal pb-1 small">
+                <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
+                <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+                <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+                <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark">Применить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container justify-content-center">
+  <div class="row justify-content-center">
+    {% for card in cards_list %}
+      <div class="col row-cols-3 row-cols-md-2 row-cols-sm-1">
+          <div class="card m-3" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{card[1]}}</h5>
+              <p class="card-text">{{card[6]}}</p>
+              <a href="/card/{{card[0]}}" class="btn btn-dark">Подробнее</a>
+            </div>
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
