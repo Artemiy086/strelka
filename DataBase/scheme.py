@@ -1,12 +1,12 @@
 import sqlalchemy as sa
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 
 
 Base = declarative_base()
 
 
 class UserData(Base):
-    __tablenme__ = 'user_data'
+    __tablename__ = 'user_data'
 
     id = sa.Column(sa.Integer, primary_key=True, autoincrement=True)
     user_name = sa.Column(sa.Text, nullable=False)

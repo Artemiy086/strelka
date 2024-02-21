@@ -1,0 +1,95 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Hello, world!</title>
+  </head>
+
+  <body>
+  <hr size="40" style="background-color: black;opacity:1;margin:0;padding:0;">
+    <nav>
+      <div class="row justify-content-md-evenly justify-content-center py-4" >
+        <div class="col-2 bg-white text-center"><a href="/" class="nav-link p-0 text-muted">Каталог</a></div>
+        <div class="col-4 bg-white text-center"><a href="/" class="nav-link p-0 text-muted">Главна</a></div>
+        <div class="col-2 bg-white text-center">Профиль</div>
+      </div>
+    </nav>
+    <header>
+      <div class="d-flex justify-content-md-around justify-content-center flex-nowrap">
+       <div class="row justify-content-start">
+         <a class="link-dark text-center">text</a>
+      </div>
+      <form class="d-flex offset-sm-1 offset-md-2 offset-lg-3 offset-4">
+        <input class="form-control-dark mr-2" type="search" placeholder="Search" aria-label="Поиск">
+        <button class="btn btn-outline-dark" type="submit">Поиск</button>
+      </form>
+      </div>
+    </header>
+
+  <div class="container justify-content-center">
+    {% block main %}{% endblock %}
+  </div>
+
+<footer class="py-5 text-white" style="background-color: #0F0E0E;">
+    <div class="row m-5">
+      <div class="col-6 col-md-2 mb-3 text-white">
+        <h5>Что-то</h5>
+        <ul class="nav flex-column text-white-80">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Что-то</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Что-то</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Что-то</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Что-то</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Что-то</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3 text-white">
+        <h5>Профильё</h5>
+        <ul class="nav flex-column text-white">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Избранное</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Корзина</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Заказы</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Личная инфорамация</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Статистика</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3 text-white">
+        <h5>Компания</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">О нас</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Развитие</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Отзыввы</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Документы</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Поддержать</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Подпишитесь на рассылку</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Электоронная почта</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-dark" type="button">Подпсаться</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© 2022 Company, Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </body>
+</html>
